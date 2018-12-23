@@ -1,0 +1,27 @@
+{
+    "truequeApp": {
+        "producto": {
+            "home": {
+                "title": "Productos",
+                "createLabel": "Create a new Producto",
+                "createOrEditLabel": "Create or edit a Producto"
+            },
+            "created": "A new Producto is created with identifier {{ param }}",
+            "updated": "A Producto is updated with identifier {{ param }}",
+            "deleted": "A Producto is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Producto {{ id }}?"
+            },
+            "detail": {
+                "title": "Producto"
+            },
+            "fecha": "Fecha",
+            "descripcion": "Descripcion",
+            "tipo": "Tipo",
+            "detalle": "Detalle",
+            "valor": "Valor",
+            "user": "User",
+            "imagenProducto": "Imagen Producto"
+        }
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "truequeApp": {
+        "trueque": {
+            "home": {
+                "title": "Trueques",
+                "createLabel": "Create a new Trueque",
+                "createOrEditLabel": "Create or edit a Trueque"
+            },
+            "created": "A new Trueque is created with identifier {{ param }}",
+            "updated": "A Trueque is updated with identifier {{ param }}",
+            "deleted": "A Trueque is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Trueque {{ id }}?"
+            },
+            "detail": {
+                "title": "Trueque"
+            },
+            "fecha": "Fecha",
+            "estado": "Estado",
+            "entrega": "Entrega",
+            "recibe": "Recibe"
+        }
+    }
+}

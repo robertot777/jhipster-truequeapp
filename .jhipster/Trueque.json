@@ -1,0 +1,45 @@
+{
+    "name": "Trueque",
+    "fields": [
+        {
+            "fieldName": "fecha",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "estado",
+            "fieldType": "Estado",
+            "fieldValues": "OFERTA,CONCRETADO"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "entrega",
+            "otherEntityName": "producto",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "trueque"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "recibe",
+            "otherEntityName": "producto",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "trueque"
+        }
+    ],
+    "changelogDate": "20181223112207",
+    "javadoc": "Entidad Trueque\n@author Roberto Tapia",
+    "entityTableName": "trueque",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

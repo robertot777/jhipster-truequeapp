@@ -1,0 +1,36 @@
+{
+    "truequeApp": {
+        "TipoOferta": {
+            "null": "",
+            "ALIMENTACION": "ALIMENTACION",
+            "BEBIDAS": "BEBIDAS",
+            "ARTE": "ARTE",
+            "ANTIGUEDADES": "ANTIGUEDADES",
+            "VEHICULOS": "VEHICULOS",
+            "CASAHOGAR": "CASAHOGAR",
+            "COLECCION": "COLECCION",
+            "DEPORTES": "DEPORTES",
+            "EDUCACION": "EDUCACION",
+            "IMAGEN": "IMAGEN",
+            "SONIDO": "SONIDO",
+            "INFORMATICA": "INFORMATICA",
+            "ELECTRONICA": "ELECTRONICA",
+            "INMOBILIARIA": "INMOBILIARIA",
+            "JOYERIA": "JOYERIA",
+            "JUEGOS": "JUEGOS",
+            "JUGUETES": "JUGUETES",
+            "LIBROS": "LIBROS",
+            "REVISTAS": "REVISTAS",
+            "COMICS": "COMICS",
+            "MUSICA": "MUSICA",
+            "ROPA": "ROPA",
+            "CALZADO": "CALZADO",
+            "SALUD": "SALUD",
+            "BELLEZA": "BELLEZA",
+            "SERVICIOS": "SERVICIOS",
+            "MANOOBRA": "MANOOBRA",
+            "TELEFONIA": "TELEFONIA",
+            "TIEMPOLIBRE": "TIEMPOLIBRE"
+        }
+    }
+}

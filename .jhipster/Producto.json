@@ -1,0 +1,67 @@
+{
+    "name": "Producto",
+    "fields": [
+        {
+            "fieldName": "fecha",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "descripcion",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 100
+        },
+        {
+            "fieldName": "tipo",
+            "fieldType": "TipoOferta",
+            "fieldValues": "ALIMENTACION,BEBIDAS,ARTE,ANTIGUEDADES,VEHICULOS,CASAHOGAR,COLECCION,DEPORTES,EDUCACION,IMAGEN,SONIDO,INFORMATICA,ELECTRONICA,INMOBILIARIA,JOYERIA,JUEGOS,JUGUETES,LIBROS,REVISTAS,COMICS,MUSICA,ROPA,CALZADO,SALUD,BELLEZA,SERVICIOS,MANOOBRA,TELEFONIA,TIEMPOLIBRE",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "detalle",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "valor",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "user",
+            "otherEntityName": "user",
+            "otherEntityField": "login",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "producto"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "imagenProducto",
+            "otherEntityName": "imagen",
+            "otherEntityRelationshipName": "producto"
+        }
+    ],
+    "changelogDate": "20181223112205",
+    "javadoc": "Entidad Producto\n@author Roberto Tapia",
+    "entityTableName": "producto",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

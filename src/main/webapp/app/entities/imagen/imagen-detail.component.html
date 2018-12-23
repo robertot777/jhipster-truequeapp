@@ -1,0 +1,50 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="imagen">
+            <h2><span jhiTranslate="truequeApp.imagen.detail.title">Imagen</span> {{imagen.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="truequeApp.imagen.fecha">Fecha</span></dt>
+                <dd>
+                    <span>{{imagen.fecha}}</span>
+                </dd>
+                <dt><span jhiTranslate="truequeApp.imagen.descripcion">Descripcion</span></dt>
+                <dd>
+                    <span>{{imagen.descripcion}}</span>
+                </dd>
+                <dt><span jhiTranslate="truequeApp.imagen.imagen">Imagen</span></dt>
+                <dd>
+                    <div *ngIf="imagen.imagen">
+                        <a (click)="openFile(imagen.imagenContentType, imagen.imagen)">
+                            <img [src]="'data:' + imagen.imagenContentType + ';base64,' + imagen.imagen" style="max-width: 100%;" alt="imagen image"/>
+                        </a>
+                        {{imagen.imagenContentType}}, {{byteSize(imagen.imagen)}}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="truequeApp.imagen.producto">Producto</span></dt>
+                <dd>
+                    <div *ngIf="imagen.productoId">
+                        <a [routerLink]="['/producto', imagen.productoId, 'view']">{{imagen.productoId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="truequeApp.imagen.user">User</span></dt>
+                <dd>
+                    {{imagen.userLogin}}
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/imagen', imagen.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

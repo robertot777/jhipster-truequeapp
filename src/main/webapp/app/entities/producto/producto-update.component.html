@@ -1,0 +1,122 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-producto-heading" jhiTranslate="truequeApp.producto.home.createOrEditLabel">Create or edit a Producto</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!producto.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="producto.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="truequeApp.producto.fecha" for="field_fecha">Fecha</label>
+                    <div class="input-group">
+                        <input id="field_fecha" type="text" class="form-control" name="fecha" ngbDatepicker  #fechaDp="ngbDatepicker" [(ngModel)]="producto.fecha"
+                        required/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="fechaDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                    <div [hidden]="!(editForm.controls.fecha?.dirty && editForm.controls.fecha?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.fecha?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="truequeApp.producto.descripcion" for="field_descripcion">Descripcion</label>
+                    <input type="text" class="form-control" name="descripcion" id="field_descripcion"
+                        [(ngModel)]="producto.descripcion" required maxlength="100"/>
+                    <div [hidden]="!(editForm.controls.descripcion?.dirty && editForm.controls.descripcion?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.descripcion?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.descripcion?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 100 }">
+                        This field cannot be longer than 100 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="truequeApp.producto.tipo" for="field_tipo">Tipo</label>
+                    <select class="form-control" name="tipo" [(ngModel)]="producto.tipo" id="field_tipo"  required>
+                        <option value="ALIMENTACION">{{'truequeApp.TipoOferta.ALIMENTACION' | translate}}</option>
+                        <option value="BEBIDAS">{{'truequeApp.TipoOferta.BEBIDAS' | translate}}</option>
+                        <option value="ARTE">{{'truequeApp.TipoOferta.ARTE' | translate}}</option>
+                        <option value="ANTIGUEDADES">{{'truequeApp.TipoOferta.ANTIGUEDADES' | translate}}</option>
+                        <option value="VEHICULOS">{{'truequeApp.TipoOferta.VEHICULOS' | translate}}</option>
+                        <option value="CASAHOGAR">{{'truequeApp.TipoOferta.CASAHOGAR' | translate}}</option>
+                        <option value="COLECCION">{{'truequeApp.TipoOferta.COLECCION' | translate}}</option>
+                        <option value="DEPORTES">{{'truequeApp.TipoOferta.DEPORTES' | translate}}</option>
+                        <option value="EDUCACION">{{'truequeApp.TipoOferta.EDUCACION' | translate}}</option>
+                        <option value="IMAGEN">{{'truequeApp.TipoOferta.IMAGEN' | translate}}</option>
+                        <option value="SONIDO">{{'truequeApp.TipoOferta.SONIDO' | translate}}</option>
+                        <option value="INFORMATICA">{{'truequeApp.TipoOferta.INFORMATICA' | translate}}</option>
+                        <option value="ELECTRONICA">{{'truequeApp.TipoOferta.ELECTRONICA' | translate}}</option>
+                        <option value="INMOBILIARIA">{{'truequeApp.TipoOferta.INMOBILIARIA' | translate}}</option>
+                        <option value="JOYERIA">{{'truequeApp.TipoOferta.JOYERIA' | translate}}</option>
+                        <option value="JUEGOS">{{'truequeApp.TipoOferta.JUEGOS' | translate}}</option>
+                        <option value="JUGUETES">{{'truequeApp.TipoOferta.JUGUETES' | translate}}</option>
+                        <option value="LIBROS">{{'truequeApp.TipoOferta.LIBROS' | translate}}</option>
+                        <option value="REVISTAS">{{'truequeApp.TipoOferta.REVISTAS' | translate}}</option>
+                        <option value="COMICS">{{'truequeApp.TipoOferta.COMICS' | translate}}</option>
+                        <option value="MUSICA">{{'truequeApp.TipoOferta.MUSICA' | translate}}</option>
+                        <option value="ROPA">{{'truequeApp.TipoOferta.ROPA' | translate}}</option>
+                        <option value="CALZADO">{{'truequeApp.TipoOferta.CALZADO' | translate}}</option>
+                        <option value="SALUD">{{'truequeApp.TipoOferta.SALUD' | translate}}</option>
+                        <option value="BELLEZA">{{'truequeApp.TipoOferta.BELLEZA' | translate}}</option>
+                        <option value="SERVICIOS">{{'truequeApp.TipoOferta.SERVICIOS' | translate}}</option>
+                        <option value="MANOOBRA">{{'truequeApp.TipoOferta.MANOOBRA' | translate}}</option>
+                        <option value="TELEFONIA">{{'truequeApp.TipoOferta.TELEFONIA' | translate}}</option>
+                        <option value="TIEMPOLIBRE">{{'truequeApp.TipoOferta.TIEMPOLIBRE' | translate}}</option>
+                    </select>
+                    <div [hidden]="!(editForm.controls.tipo?.dirty && editForm.controls.tipo?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.tipo?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="truequeApp.producto.detalle" for="field_detalle">Detalle</label>
+                    <textarea class="form-control" name="detalle" id="field_detalle"
+                        [(ngModel)]="producto.detalle" ></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="truequeApp.producto.valor" for="field_valor">Valor</label>
+                    <input type="number" class="form-control" name="valor" id="field_valor"
+                        [(ngModel)]="producto.valor" required/>
+                    <div [hidden]="!(editForm.controls.valor?.dirty && editForm.controls.valor?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.valor?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.valor?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="truequeApp.producto.user" for="field_user">User</label>
+                    <select class="form-control" id="field_user" name="user" [(ngModel)]="producto.userId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="userOption.id" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.login}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

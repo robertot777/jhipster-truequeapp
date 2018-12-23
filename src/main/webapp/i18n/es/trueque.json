@@ -1,0 +1,24 @@
+{
+    "truequeApp": {
+        "trueque": {
+            "home": {
+                "title": "Trueques",
+                "createLabel": "Crear nuevo Trueque",
+                "createOrEditLabel": "Crear o editar Trueque"
+            },
+            "created": "Un nuevo Trueque ha sido creado con el identificador {{ param }}",
+            "updated": "Un Trueque ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Trueque ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Trueque {{ id }}?"
+            },
+            "detail": {
+                "title": "Trueque"
+            },
+            "fecha": "Fecha",
+            "estado": "Estado",
+            "entrega": "Entrega",
+            "recibe": "Recibe"
+        }
+    }
+}
