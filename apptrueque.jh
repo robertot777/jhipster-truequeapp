@@ -1,0 +1,76 @@
+/**
+ * Entidad Producto
+ * @author Roberto Tapia
+ */
+entity Producto {
+	fecha LocalDate required,
+	descripcion String required maxlength(100),
+    tipo TipoOferta required,
+    detalle TextBlob,
+    valor Integer required
+}
+
+/**
+ * Entidad Imagen
+ * @author Roberto Tapia
+ */
+entity Imagen {
+	fecha LocalDate,
+	descripcion String required maxlength(100),
+    imagen ImageBlob required
+}
+
+/**
+ * Entidad Trueque
+ * @author Roberto Tapia
+ */
+entity Trueque {
+	fecha LocalDate required,
+    estado Estado
+}
+/**
+ * Tipos de oferta
+ */
+enum TipoOferta {
+	ALIMENTACION, BEBIDAS, ARTE, ANTIGUEDADES, VEHICULOS, CASAHOGAR, COLECCION, DEPORTES, EDUCACION, IMAGEN, SONIDO, INFORMATICA, ELECTRONICA, INMOBILIARIA, JOYERIA, JUEGOS, JUGUETES, LIBROS, REVISTAS, COMICS, MUSICA, ROPA, CALZADO, SALUD, BELLEZA, SERVICIOS, MANOOBRA, TELEFONIA, TIEMPOLIBRE 
+}
+
+/**
+ * Relación Trueque - Producto
+ */
+relationship OneToOne {
+	Trueque{entrega} to Producto
+	Trueque{recibe} to Producto
+}
+
+/**
+ * Estados
+ */
+enum Estado {
+    OFERTA, CONCRETADO
+}
+/**
+ * Relación User - Producto/Imagen
+ */
+relationship OneToOne {
+	Producto{user(Login)} to User
+	Imagen{user(Login)} to User    
+}
+
+/**
+ * Relación Producto - Imagen
+ */
+relationship OneToMany {
+	Producto{imagenProducto} to Imagen
+}
+
+dto * with mapstruct
+
+//et service options to all except few
+//service all with serviceImpl except Employee, Job
+service all with serviceImpl
+// Set an angular suffix
+//angularSuffix * with mySuffix
+//paginate JobHistory, Employee with infinite-scroll
+paginate Producto, Trueque with pagination
+
